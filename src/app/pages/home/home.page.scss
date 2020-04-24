@@ -1,0 +1,44 @@
+.m-header {
+	background: url("src/assets/imgs/magic-header-bg.png") #ffffff no-repeat
+		fixed top;
+	padding: 80px 2rem 0 2rem;
+	min-height: 299px;
+}
+
+h1 {
+	font-family: "Oswald";
+	font-weight: bold;
+	color: var(--ion-color-light);
+	font-size: 22px;
+}
+
+h2 {
+	font-size: 12px;
+	font-family: "Oswald";
+	color: var(--ion-color-light);
+	width: 85%;
+	font-weight: normal;
+}
+
+.m-countries {
+	font-family: "Oswald";
+	font-weight: 600;
+	font-size: 14px;
+	color: var(--ion-color-dark);
+	margin: -67px 2rem 0 2rem;
+	padding: 15px;
+	display: flex;
+	justify-content: space-between;
+	background-color: #ffffff;
+	border-radius: 15px;
+
+	.more {
+		display: flex;
+		align-items: center;
+		span {
+			font-size: 12px;
+			font-weight: normal;
+			margin-right: 0.5rem;
+		}
+	}
+}
