@@ -1,6 +1,5 @@
 .m-header {
-	background: url("src/assets/imgs/magic-header-bg.png") #ffffff no-repeat
-		fixed top;
+	background: url("src/assets/imgs/magic-header-bg.png") #ffffff no-repeat top;
 	padding: 80px 2rem 0 2rem;
 	min-height: 299px;
 }
@@ -34,11 +33,44 @@ h2 {
 
 	.more {
 		display: flex;
+		flex-direction: row;
 		align-items: center;
 		span {
 			font-size: 12px;
 			font-weight: normal;
 			margin-right: 0.5rem;
+		}
+	}
+}
+
+.m-content {
+	margin: 15px 2rem 0 2rem;
+	span {
+		color: var(--ion-color-primary);
+		font-family: "Oswald";
+		font-weight: bold;
+		font-size: 52px;
+		display: block;
+	}
+	.m-btn-wrp {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		span,
+		ion-button {
+			&:first-child {
+				margin-right: 20px;
+			}
+		}
+
+		ion-button {
+			font-size: 12px;
+			--padding-bottom: 20px;
+			--padding-top: 20px;
+			--padding-start: 40px;
+			--padding-end: 40px;
+			height: 52px;
 		}
 	}
 }
