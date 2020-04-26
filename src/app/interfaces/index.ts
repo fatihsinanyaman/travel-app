@@ -1,4 +1,9 @@
 export class Country {
-	country_code: string;
-	country_name: string;
+	code: string;
+	name: string;
+}
+
+export class Continent {
+	code: string;
+	name: string;
 }

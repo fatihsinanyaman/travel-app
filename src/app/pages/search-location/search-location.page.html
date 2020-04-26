@@ -1,9 +1,81 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>search-location</ion-title>
-  </ion-toolbar>
+<ion-header class="ion-no-border">
+	<ion-toolbar>
+		<ion-buttons slot="start" class="back-button">
+			<ion-back-button
+				defaultHref="/home"
+				icon="back"
+				text=""
+				color="dark"
+			></ion-back-button>
+		</ion-buttons>
+		<ion-title>WHERE DO YOU WANT GO</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+	<ion-item class="user-location item-box" lines="none">
+		<ion-avatar slot="start">
+			<img src="/assets/imgs/temp/user.png" />
+		</ion-avatar>
+		<ion-label class="ion-text-wrap">
+			<span>from istanbul</span>
+			<span>you are here</span>
+		</ion-label>
+	</ion-item>
+	<ion-item lines="none" class="item-box">
+		<ion-searchbar
+			search-icon="search"
+			mode="md"
+			[(ngModel)]="searchTerm"
+		></ion-searchbar>
+	</ion-item>
+	<div class="continents">
+		<h1>Continentals</h1>
+		<ion-segment
+			(ionChange)="continentChanged($event.target.value)"
+			[value]="selectedContinentCode"
+			scrollable
+			mode="ios"
+		>
+			<ion-segment-button
+				*ngFor="let continent of continents"
+				[ngClass]="continent.code"
+				[value]="continent.code"
+				layout="icon-hide"
+			>
+				<ion-label>{{ continent.name }}</ion-label>
+			</ion-segment-button>
+		</ion-segment>
+	</div>
+	<ion-list class="countries mt-32px" lines="none">
+		<ion-list-header lines="none" class="pl-0">
+			<ion-label><h1>Countries</h1></ion-label>
+			<ion-badge color="tertiary"
+				>Selected {{ selectedCountries.length }}/{{
+				continentCountries.length }}</ion-badge
+			>
+		</ion-list-header>
+		<ion-item
+			*ngFor="let country of continentCountries | countryFilter:searchTerm"
+			class="item-box mb-10px"
+		>
+			<ion-label>{{ country.name }}</ion-label>
+			<span
+				slot="end"
+				color="medium"
+				*ngIf="selectedCountries.includes(country); else deselect"
+				>Deselect</span
+			>
+			<ng-template #deselect>
+				<span slot="end" color="medium">Select</span>
+			</ng-template>
+			<ion-checkbox
+				slot="end"
+				(ionChange)="changeCountrySelect($event.target.checked, country)"
+				[value]="country.code"
+				class="ml-10px"
+				mode="ios"
+			></ion-checkbox>
+		</ion-item>
+	</ion-list>
 </ion-content>
