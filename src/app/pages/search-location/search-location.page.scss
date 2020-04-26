@@ -1,0 +1,108 @@
+ion-header {
+	ion-title {
+		color: var(--ion-color-dark);
+		font-weight: bold;
+		font-size: 14px;
+	}
+
+	ion-buttons {
+		position: absolute;
+		ion-back-button {
+			font-size: 10px;
+		}
+	}
+
+	ion-toolbar {
+		text-align: center;
+	}
+}
+
+ion-content {
+	--padding-top: 30px;
+	--padding-start: 16px;
+	--padding-end: 16px;
+
+	h1 {
+		font-weight: bold;
+		font-size: 14px;
+		color: var(--ion-color-medium);
+	}
+
+	.user-location {
+		ion-label {
+			display: flex;
+			justify-content: space-between;
+
+			span {
+				text-transform: uppercase;
+				&:nth-child(1) {
+					color: var(--ion-color-tertiary);
+					font-weight: bold;
+					font-size: 14px;
+				}
+				&:nth-child(2) {
+					color: var(--ion-color-secondary);
+					font-weight: 300;
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+	.continents {
+		margin-top: 30px;
+		ion-segment {
+			background: none;
+			ion-segment-button {
+				height: 40px;
+				background-color: var(--ion-color-medium);
+				margin-right: 10px;
+				border-radius: 7px;
+				--background-checked: url("src/assets/imgs/continents/eu.png")
+					#ffffff no-repeat top;
+				background-position: center;
+
+				&.segment-button-checked {
+					ion-label {
+						font-size: 12px;
+						font-weight: bold;
+					}
+				}
+				&::before {
+					display: none;
+				}
+				ion-label {
+					text-transform: uppercase;
+					font-size: 10px;
+					color: #ffffff;
+				}
+			}
+		}
+	}
+
+	.countries {
+		ion-item {
+			&.item-checkbox-checked {
+				--background: linear-gradient(
+					-90deg,
+					rgb(204, 73, 178) 0%,
+					rgb(254, 114, 115) 100%
+				);
+				ion-label {
+					color: #ffffff;
+				}
+			}
+			text-transform: uppercase;
+			ion-label {
+				font-weight: bold;
+				font-size: 14px;
+				color: var(--ion-color-tertiary);
+			}
+			span {
+				font-weight: 500;
+				font-size: 10px;
+				color: var(--ion-color-medium);
+			}
+		}
+	}
+}

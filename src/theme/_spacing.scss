@@ -1,0 +1,65 @@
+$spacing: auto 0 2px 4px 8px 10px 12px 16px 24px 32px 36px 48px 64px;
+
+@each $size in $spacing {
+	// ! Paddings
+	.p-#{$size} {
+		padding: $size !important;
+	}
+
+	.pr-#{$size} {
+		padding-right: $size !important;
+	}
+
+	.pb-#{$size} {
+		padding-bottom: $size !important;
+	}
+
+	.pl-#{$size} {
+		padding-left: $size !important;
+	}
+
+	.pt-#{$size} {
+		padding-top: $size !important;
+	}
+
+	.px-#{$size} {
+		padding-right: $size !important;
+		padding-left: $size !important;
+	}
+
+	.py-#{$size} {
+		padding-top: $size !important;
+		padding-bottom: $size !important;
+	}
+
+	// ! Margins
+	.m-#{$size} {
+		margin: $size !important;
+	}
+
+	.mr-#{$size} {
+		margin-right: $size !important;
+	}
+
+	.mb-#{$size} {
+		margin-bottom: $size !important;
+	}
+
+	.ml-#{$size} {
+		margin-left: $size !important;
+	}
+
+	.mt-#{$size} {
+		margin-top: $size !important;
+	}
+
+	.mx-#{$size} {
+		margin-right: $size !important;
+		margin-left: $size !important;
+	}
+
+	.my-#{$size} {
+		margin-top: $size !important;
+		margin-bottom: $size !important;
+	}
+}

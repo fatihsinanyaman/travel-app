@@ -1,0 +1,33 @@
+<app-modal-header title="Set Price"></app-modal-header>
+<div class="price-container">
+	<p>
+		Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+		accusantium doloremque laudantium, totam rem aperiam...
+	</p>
+	<div class="icon-wrapper">
+		<ion-icon name="arrow-back-outline" (click)="downPrice()"></ion-icon>
+		<ion-text color="primary"
+			>{{ price | currency: 'USD':'symbol':'3.0' }}</ion-text
+		>
+		<ion-icon name="arrow-forward-outline" (click)="upPrice()"></ion-icon>
+	</div>
+	<ion-item>
+		<ion-range
+			min="0"
+			max="20000"
+			[step]="step"
+			[value]="price"
+			(ionChange)="setPrice($event.target.value)"
+			mode="ios"
+		>
+		</ion-range>
+	</ion-item>
+</div>
+<ion-footer class="ion-no-border">
+	<ion-toolbar class="footer-button" (click)="finish()">
+		<h1 class="m-0 p-0">
+			<span *ngIf="days.length === 0; else complete">Set Days</span>
+		</h1>
+		<ng-template #complete>Do The Magic Thing!</ng-template>
+	</ion-toolbar>
+</ion-footer>

@@ -19,6 +19,28 @@ const routes: Routes = [
 				(m) => m.SearchLocationPageModule
 			),
 	},
+	{
+		path: "set-days",
+		loadChildren: () =>
+			import("./pages/set-days/set-days.module").then(
+				(m) => m.SetDaysPageModule
+			),
+	},
+	{
+		path: "set-price",
+		loadChildren: () =>
+			import("./pages/set-price/set-price.module").then(
+				(m) => m.SetPricePageModule
+			),
+	},
+
+	{
+		path: "result-magic",
+		loadChildren: () =>
+			import("./pages/result-magic/result-magic.module").then(
+				(m) => m.ResultMagicPageModule
+			),
+	},
 ];
 
 @NgModule({

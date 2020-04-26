@@ -1,0 +1,26 @@
+.m-countries {
+	margin: -67px 2rem 0 2rem;
+	padding: 15px;
+	display: flex;
+	justify-content: space-between;
+	background-color: #ffffff;
+	border-radius: 15px;
+
+	span {
+		font-weight: 600;
+		font-size: 14px;
+		color: var(--ion-color-dark);
+		text-transform: uppercase;
+	}
+
+	.more {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		span {
+			font-size: 12px;
+			font-weight: normal;
+			margin-right: 0.5rem;
+		}
+	}
+}
