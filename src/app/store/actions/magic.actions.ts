@@ -4,6 +4,7 @@ import { Country } from "src/app/interfaces";
 export const SET_MAGIC_DAYS = "[Magic Days] Set";
 export const SET_MAGIC_PRICE = "[Magic Price] Set";
 export const SET_MAGIC_COUNTRIES = "[Magic Contries] Set";
+export const SET_ACTIVE_CONTINENT = "[Magic ActiveContinent] Set";
 
 export class SetMagicDays implements Action {
 	readonly type = SET_MAGIC_DAYS;
@@ -20,4 +21,13 @@ export class SetMagicCountries implements Action {
 	constructor(public payload: Array<Country>) {}
 }
 
-export type MagicActions = SetMagicDays | SetMagicPrice | SetMagicCountries;
+export class SetActiveContinent implements Action {
+	readonly type = SET_ACTIVE_CONTINENT;
+	constructor(public payload: string) {}
+}
+
+export type MagicActions =
+	| SetMagicDays
+	| SetMagicPrice
+	| SetMagicCountries
+	| SetActiveContinent;

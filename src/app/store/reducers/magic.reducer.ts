@@ -5,6 +5,7 @@ export interface MagicState {
 	price: number;
 	countries: Array<Country>;
 	continents: Array<Continent>;
+	activeContinentCode: string;
 	days: [];
 }
 
@@ -30,6 +31,7 @@ export const initialState: MagicState = {
 		},
 	],
 	days: [],
+	activeContinentCode: "eu",
 };
 
 export function reducer(
@@ -54,6 +56,13 @@ export function reducer(
 			return {
 				...state,
 				countries: action.payload,
+			};
+		}
+
+		case fromMagicActions.SET_ACTIVE_CONTINENT: {
+			return {
+				...state,
+				activeContinentCode: action.payload,
 			};
 		}
 	}

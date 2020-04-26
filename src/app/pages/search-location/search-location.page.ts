@@ -13,7 +13,7 @@ export class SearchLocationPage implements OnInit {
 	continents: [];
 	continentCountries = [];
 	allCountries = countries;
-	selectedContinentCode = "eu";
+	activeContinentCode: string;
 	selectedCountries = [];
 	searchTerm = "";
 	constructor(private store: Store<fromStore.AppState>) {
@@ -24,18 +24,22 @@ export class SearchLocationPage implements OnInit {
 		this.store.select<any>("magic").subscribe((state) => {
 			this.continents = state.continents;
 			this.selectedCountries = state.countries;
+			this.activeContinentCode = state.activeContinentCode;
+			if (state.activeContinentCode) {
+				this.setContinentCountries();
+			}
 		});
 	}
 
 	continentChanged(code) {
-		this.selectedContinentCode = code;
 		this.setContinentCountries();
 		this.store.dispatch(new fromStore.SetMagicCountries([]));
+		this.store.dispatch(new fromStore.SetActiveContinent(code));
 	}
 
 	setContinentCountries() {
 		this.continentCountries = this.allCountries.filter(
-			(c) => c.continent.toLowerCase() === this.selectedContinentCode
+			(c) => c.continent.toLowerCase() === this.activeContinentCode
 		);
 	}
 	changeCountrySelect(status, country) {
