@@ -77,3 +77,33 @@ ion-checkbox {
 		display: none;
 	}
 }
+
+.set-days-modal {
+	--background: transparent !important;
+	ion-backdrop {
+		display: none;
+	}
+	.modal-wrapper {
+		background: transparent;
+	}
+}
+
+.footer-button {
+	--background: linear-gradient(
+		-90deg,
+		rgb(204, 73, 178) 0%,
+		rgb(254, 114, 115) 100%
+	);
+	min-height: 85px;
+	border-radius: 20px 20px 0 0;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	h1 {
+		font-size: 16px;
+		text-align: center;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}

@@ -1,0 +1,39 @@
+<app-modal-header title="Set Days"></app-modal-header>
+<div class="datepicker-container">
+	<div class="weeks mr-24px">
+		<ion-list lines="none">
+			<ion-item *ngFor="let week of weeks | keyvalue" class="item-box">
+				<ion-label>
+					<span>Week {{week.key +1}}</span>{{ week.value.startDate |
+					date:'MMM dd' }} - {{ week.value.endDate | date: 'MMM dd' }}
+				</ion-label>
+				<ion-checkbox
+					slot="end"
+					(ionChange)="weekSelect($event.target.checked, week.value.startDate)"
+					[value]="week.startDate"
+					[checked]="selectedDays.includes(week.value.startDate)"
+					class="ml-10px"
+					mode="ios"
+				></ion-checkbox>
+			</ion-item>
+		</ion-list>
+	</div>
+	<div class="months">
+		<ion-icon name="arrow-up-outline" color="dark"></ion-icon>
+		<ion-list lines="none">
+			<ion-item
+				*ngFor="let month of months"
+				(click)="changeMonth(month.number)"
+				[ngClass]="{current: month.number == currentMonthNumber}"
+			>
+				<ion-label>{{ month.name }}</ion-label>
+			</ion-item>
+		</ion-list>
+		<ion-icon name="arrow-down-outline" color="dark"></ion-icon>
+	</div>
+</div>
+<ion-footer class="ion-no-border">
+	<ion-toolbar class="footer-button">
+		<h1 class="m-0 p-0">Set Price</h1>
+	</ion-toolbar>
+</ion-footer>

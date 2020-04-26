@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content [ngClass]="{'modal-opened': modalDisplayStatus}">
 	<div class="m-header">
 		<h1>DO THE MAGIC THING!</h1>
 		<h2>
@@ -14,7 +14,9 @@
 		<span>TO TRAVEL</span>
 		<div class="m-btn-wrp">
 			<span>FOR</span>
-			<ion-button color="tertiary">SET</ion-button>
+			<ion-button color="tertiary" (click)="openSetDaysModal()"
+				>SET</ion-button
+			>
 		</div>
 		<span>DAYS WITH</span>
 		<div class="m-btn-wrp">
@@ -24,10 +26,8 @@
 	</div>
 </ion-content>
 
-<app-date-selector></app-date-selector>
+<!-- <app-date-selector></app-date-selector> -->
 
 <ion-footer class="ion-no-border">
-	<ion-toolbar>
-		<ion-title>Footer</ion-title>
-	</ion-toolbar>
+	<ion-toolbar class="footer-button"> </ion-toolbar>
 </ion-footer>

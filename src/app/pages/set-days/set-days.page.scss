@@ -1,0 +1,63 @@
+.datepicker-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	.weeks {
+		ion-item {
+			&.item-checkbox-checked {
+				span {
+					color: #fe7273;
+				}
+			}
+			ion-label {
+				font-size: 12px;
+				text-transform: uppercase;
+				color: var(--ion-color-dark);
+				span {
+					font-weight: 600;
+					padding: 0 10px;
+				}
+			}
+			ion-checkbox {
+				--background-checked: #ffffff;
+				--checkmark-color: #fe7273;
+				&.checkbox-checked {
+					background: linear-gradient(
+						-90deg,
+						rgb(204, 73, 178) 0%,
+						rgb(254, 114, 115) 100%
+					);
+					border-radius: 5px;
+				}
+				i.checkbox-icon {
+					display: none;
+				}
+				padding: 6px;
+			}
+		}
+	}
+	.months {
+		text-align: center;
+		width: 75px;
+		border-left: 1px solid var(--ion-color-dark);
+		ion-list {
+			height: 360px;
+			overflow-y: scroll;
+		}
+		ion-item {
+			margin: 24px 0;
+			ion-label {
+				font-size: 16px;
+				font-weight: 600;
+				text-transform: uppercase;
+				color: var(--ion-color-medium);
+			}
+			&.current {
+				ion-label {
+					color: var(--ion-color-dark);
+				}
+			}
+		}
+	}
+}

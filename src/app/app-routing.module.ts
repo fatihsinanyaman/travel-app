@@ -19,6 +19,13 @@ const routes: Routes = [
 				(m) => m.SearchLocationPageModule
 			),
 	},
+	{
+		path: "set-days",
+		loadChildren: () =>
+			import("./pages/set-days/set-days.module").then(
+				(m) => m.SetDaysPageModule
+			),
+	},
 ];
 
 @NgModule({
