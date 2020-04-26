@@ -7,6 +7,9 @@ ion-header {
 
 	ion-buttons {
 		position: absolute;
+		ion-back-button {
+			font-size: 10px;
+		}
 	}
 
 	ion-toolbar {

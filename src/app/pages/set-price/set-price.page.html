@@ -25,6 +25,9 @@
 </div>
 <ion-footer class="ion-no-border">
 	<ion-toolbar class="footer-button" (click)="finish()">
-		<h1 class="m-0 p-0">Do The Magic Thing!</h1>
+		<h1 class="m-0 p-0">
+			<span *ngIf="days.length === 0; else complete">Set Days</span>
+		</h1>
+		<ng-template #complete>Do The Magic Thing!</ng-template>
 	</ion-toolbar>
 </ion-footer>

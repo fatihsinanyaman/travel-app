@@ -15,6 +15,7 @@ export class SetDaysPage implements OnInit {
 	weeks = [];
 	currentMonthNumber = 0;
 	selectedDays = [];
+	price: 0;
 
 	constructor(
 		private store: Store<fromStore.AppState>,
@@ -26,6 +27,7 @@ export class SetDaysPage implements OnInit {
 	ngOnInit() {
 		this.store.select<any>("magic").subscribe((state) => {
 			this.selectedDays = state.days;
+			this.price = state.price;
 		});
 	}
 

@@ -37,6 +37,9 @@
 </div>
 <ion-footer class="ion-no-border">
 	<ion-toolbar class="footer-button" (click)="finish()">
-		<h1 class="m-0 p-0">Set Price</h1>
+		<h1 class="m-0 p-0">
+			<span *ngIf="price === 0; else complete">Set Price</span>
+		</h1>
+		<ng-template #complete>Do The Magic Thing!</ng-template>
 	</ion-toolbar>
 </ion-footer>

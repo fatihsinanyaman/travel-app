@@ -14,16 +14,44 @@
 		<span>TO TRAVEL</span>
 		<div class="m-btn-wrp">
 			<span>FOR</span>
-			<ion-button color="tertiary" (click)="openSetDaysModal()"
-				>SET</ion-button
-			>
+			<ion-button
+				color="tertiary"
+				(click)="openSetDaysModal()"
+				*ngIf="days.length === 0; else dayCount"
+				mode="ios"
+				>SET
+			</ion-button>
+			<ng-template #dayCount>
+				<ion-button
+					color="primary"
+					class="definedDays"
+					(click)="openSetDaysModal()"
+					mode="ios"
+					>{{ days.length * 7 }}
+				</ion-button>
+			</ng-template>
 		</div>
 		<span>DAYS WITH</span>
 		<div class="m-btn-wrp">
-			<ion-button color="tertiary" (click)="openSetPriceModal()"
-				>SET</ion-button
+			<ion-button
+				color="tertiary"
+				(click)="openSetPriceModal()"
+				mode="ios"
 			>
+				<div *ngIf="price === 0; else priceDefined">SET</div>
+				<ng-template #priceDefined>
+					{{ price | currency: 'USD':'symbol':'3.0' }}
+				</ng-template>
+			</ion-button>
 			<span>USD!</span>
 		</div>
 	</div>
 </ion-content>
+<ion-footer
+	class="ion-no-border"
+	*ngIf="days.length > 0 && price > 0 && countries.length > 0"
+>
+	<ion-toolbar class="footer-button" [routerLink]="['/result-magic']">
+		<h1 class="m-0 p-0">Do The Magic Thing!</h1>
+	</ion-toolbar>
+</ion-footer>

@@ -12,13 +12,18 @@ import * as fromStore from "src/app/store";
 export class SetPricePage implements OnInit {
 	price;
 	step = 100;
-	constructor(private store: Store<fromStore.AppState>) {
+	days = [];
+	constructor(
+		private store: Store<fromStore.AppState>,
+		private modalController: ModalController
+	) {
 		this.setPrice(3400);
 	}
 
 	ngOnInit() {
 		this.store.select<any>("magic").subscribe((state) => {
 			this.price = state.price;
+			this.days = state.days;
 		});
 	}
 
@@ -36,5 +41,11 @@ export class SetPricePage implements OnInit {
 		} else {
 			this.setPrice(1);
 		}
+	}
+
+	async finish() {
+		await this.modalController.dismiss({
+			completed: true,
+		});
 	}
 }

@@ -26,10 +26,21 @@ const routes: Routes = [
 				(m) => m.SetDaysPageModule
 			),
 	},
-  {
-    path: 'set-price',
-    loadChildren: () => import('./pages/set-price/set-price.module').then( m => m.SetPricePageModule)
-  },
+	{
+		path: "set-price",
+		loadChildren: () =>
+			import("./pages/set-price/set-price.module").then(
+				(m) => m.SetPricePageModule
+			),
+	},
+
+	{
+		path: "result-magic",
+		loadChildren: () =>
+			import("./pages/result-magic/result-magic.module").then(
+				(m) => m.ResultMagicPageModule
+			),
+	},
 ];
 
 @NgModule({
