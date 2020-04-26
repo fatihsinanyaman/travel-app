@@ -78,7 +78,8 @@ ion-checkbox {
 	}
 }
 
-.set-days-modal {
+.set-days-modal,
+.set-price-modal {
 	--background: transparent !important;
 	ion-backdrop {
 		display: none;

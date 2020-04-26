@@ -8,9 +8,9 @@ import { HomePageRoutingModule } from "./home-routing.module";
 
 import { HomePage } from "./home.page";
 
-import { DateSelectorComponent } from "./components/date-selector/date-selector.component";
 import { CountrySelectButtonComponent } from "./components/country-select-button/country-select-button.component";
 import { SetDaysPageModule } from "src/app/pages/set-days/set-days.module";
+import { SetPricePageModule } from "src/app/pages/set-price/set-price.module";
 
 @NgModule({
 	imports: [
@@ -19,12 +19,9 @@ import { SetDaysPageModule } from "src/app/pages/set-days/set-days.module";
 		IonicModule,
 		HomePageRoutingModule,
 		SetDaysPageModule,
+		SetPricePageModule,
 	],
-	declarations: [
-		HomePage,
-		DateSelectorComponent,
-		CountrySelectButtonComponent,
-	],
-	entryComponents: [DateSelectorComponent, CountrySelectButtonComponent],
+	declarations: [HomePage, CountrySelectButtonComponent],
+	entryComponents: [CountrySelectButtonComponent],
 })
 export class HomePageModule {}

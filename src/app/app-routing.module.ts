@@ -26,6 +26,10 @@ const routes: Routes = [
 				(m) => m.SetDaysPageModule
 			),
 	},
+  {
+    path: 'set-price',
+    loadChildren: () => import('./pages/set-price/set-price.module').then( m => m.SetPricePageModule)
+  },
 ];
 
 @NgModule({

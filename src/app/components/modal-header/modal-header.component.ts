@@ -8,7 +8,7 @@ import { ModalController } from "@ionic/angular";
 })
 export class ModalHeaderComponent implements OnInit {
 	@Input() title: string = "";
-	constructor(public modalController: ModalController) {}
+	constructor(private modalController: ModalController) {}
 
 	ngOnInit() {}
 

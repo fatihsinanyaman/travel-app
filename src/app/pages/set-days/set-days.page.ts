@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import moment from "moment";
 import { Store } from "@ngrx/store";
+import { ModalController } from "@ionic/angular";
 
 import * as fromStore from "src/app/store";
 
@@ -14,7 +15,11 @@ export class SetDaysPage implements OnInit {
 	weeks = [];
 	currentMonthNumber = 0;
 	selectedDays = [];
-	constructor(private store: Store<fromStore.AppState>) {
+
+	constructor(
+		private store: Store<fromStore.AppState>,
+		public modalController: ModalController
+	) {
 		this.setMonths();
 	}
 
@@ -35,6 +40,7 @@ export class SetDaysPage implements OnInit {
 		}
 		this.changeMonth(this.months[1].number);
 	}
+
 	changeMonth(monthNumber) {
 		this.currentMonthNumber = monthNumber;
 		this.getMonthWeeks(monthNumber);
@@ -65,6 +71,7 @@ export class SetDaysPage implements OnInit {
 			0
 		);
 	}
+
 	weekSelect(status, startDate) {
 		if (status) {
 			this.store.dispatch(
@@ -77,5 +84,14 @@ export class SetDaysPage implements OnInit {
 				)
 			);
 		}
+	}
+
+	async finish() {
+		if (this.selectedDays.length === 0) {
+			return;
+		}
+		await this.modalController.dismiss({
+			completed: true,
+		});
 	}
 }

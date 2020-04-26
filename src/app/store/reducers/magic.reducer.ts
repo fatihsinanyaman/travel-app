@@ -10,7 +10,7 @@ export interface MagicState {
 }
 
 export const initialState: MagicState = {
-	price: 3400,
+	price: 0,
 	countries: [],
 	continents: [
 		{

@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { ModalController } from "@ionic/angular";
-import { SetDaysPage } from "src/app/pages/set-days/set-days.page";
 
 import * as fromStore from "src/app/store";
+import { SetDaysPage } from "src/app/pages/set-days/set-days.page";
+import { SetPricePage } from "src/app/pages/set-price/set-price.page";
 
 @Component({
 	selector: "app-home",
@@ -16,7 +17,7 @@ export class HomePage implements OnInit {
 
 	constructor(
 		private store: Store<fromStore.AppState>,
-		public modalController: ModalController
+		private modalController: ModalController
 	) {}
 
 	ngOnInit() {
@@ -32,8 +33,26 @@ export class HomePage implements OnInit {
 		});
 		await modal.present();
 		this.modalDisplayStatus = true;
-		modal.onWillDismiss().then(() => {
+		modal.onWillDismiss().then(({ data }) => {
 			this.modalDisplayStatus = false;
+			if (data.completed) {
+				this.openSetPriceModal();
+			}
+		});
+	}
+
+	async openSetPriceModal() {
+		const modal = await this.modalController.create({
+			component: SetPricePage,
+			cssClass: "set-price-modal",
+		});
+		await modal.present();
+		this.modalDisplayStatus = true;
+		modal.onWillDismiss().then(({ data }) => {
+			this.modalDisplayStatus = false;
+			if (data.completed) {
+				//this.openSetPriceModal();
+			}
 		});
 	}
 }
