@@ -4,8 +4,11 @@
 		<ion-list lines="none">
 			<ion-item *ngFor="let week of weeks | keyvalue" class="item-box">
 				<ion-label>
-					<span>Week {{week.key +1}}</span>{{ week.value.startDate |
-					date:'MMM dd' }} - {{ week.value.endDate | date: 'MMM dd' }}
+					<span class="week-number">Week {{week.key +1}}</span
+					><span class="week-dates"
+						>{{ week.value.startDate | date:'MMM dd' }} - {{
+						week.value.endDate | date: 'MMM dd' }}</span
+					>
 				</ion-label>
 				<ion-checkbox
 					slot="end"

@@ -6,17 +6,21 @@
 	.weeks {
 		ion-item {
 			&.item-checkbox-checked {
-				span {
-					color: #fe7273;
-				}
 			}
 			ion-label {
-				font-size: 12px;
-				text-transform: uppercase;
-				color: var(--ion-color-dark);
 				span {
-					font-weight: 600;
-					padding: 0 10px;
+					font-size: 12px;
+					text-transform: uppercase;
+					color: var(--ion-color-dark);
+					font-family: "Oswald";
+					&.week-number {
+						color: #fe7273;
+						font-weight: 600;
+						padding: 0 10px;
+					}
+					&.week-dates {
+						opacity: 0.5;
+					}
 				}
 			}
 			ion-checkbox {
@@ -50,6 +54,7 @@
 			ion-label {
 				font-size: 16px;
 				font-weight: 600;
+				font-family: "Oswald";
 				text-transform: uppercase;
 				color: var(--ion-color-medium);
 			}
