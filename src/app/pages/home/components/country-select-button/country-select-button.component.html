@@ -4,10 +4,12 @@
 	*ngIf="countries.length > 0; else countrySelect"
 >
 	<div>
-		EUROPE, ALBANIA, ARGENTINA...
+		{{ countriesBeauty }}
 	</div>
 	<div class="more">
-		<span>6 MORE</span>
+		<span *ngIf="displayedCountryCount < countries.length"
+			>{{ countries.length - displayedCountryCount }} MORE</span
+		>
 		<ion-icon name="edit"></ion-icon>
 	</div>
 </div>

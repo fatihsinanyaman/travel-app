@@ -1,14 +1,17 @@
 .m-countries {
-	font-family: "Oswald";
-	font-weight: 600;
-	font-size: 14px;
-	color: var(--ion-color-dark);
 	margin: -67px 2rem 0 2rem;
 	padding: 15px;
 	display: flex;
 	justify-content: space-between;
 	background-color: #ffffff;
 	border-radius: 15px;
+
+	span {
+		font-weight: 600;
+		font-size: 14px;
+		color: var(--ion-color-dark);
+		text-transform: uppercase;
+	}
 
 	.more {
 		display: flex;

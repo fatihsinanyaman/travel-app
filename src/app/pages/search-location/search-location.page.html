@@ -73,6 +73,7 @@
 				slot="end"
 				(ionChange)="changeCountrySelect($event.target.checked, country)"
 				[value]="country.code"
+				[checked]="selectedCountries.includes(country)"
 				class="ml-10px"
 				mode="ios"
 			></ion-checkbox>
