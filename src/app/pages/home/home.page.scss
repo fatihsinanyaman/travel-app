@@ -19,30 +19,6 @@ h2 {
 	font-weight: normal;
 }
 
-.m-countries {
-	font-family: "Oswald";
-	font-weight: 600;
-	font-size: 14px;
-	color: var(--ion-color-dark);
-	margin: -67px 2rem 0 2rem;
-	padding: 15px;
-	display: flex;
-	justify-content: space-between;
-	background-color: #ffffff;
-	border-radius: 15px;
-
-	.more {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		span {
-			font-size: 12px;
-			font-weight: normal;
-			margin-right: 0.5rem;
-		}
-	}
-}
-
 .m-content {
 	margin: 15px 2rem 0 2rem;
 	span {
@@ -72,5 +48,18 @@ h2 {
 			--padding-end: 40px;
 			height: 52px;
 		}
+	}
+}
+
+ion-footer {
+	background-color: #fff;
+	ion-toolbar {
+		--background: linear-gradient(
+			-90deg,
+			rgb(204, 73, 178) 0%,
+			rgb(254, 114, 115) 100%
+		);
+		min-height: 85px;
+		border-radius: 20px 20px 0 0;
 	}
 }

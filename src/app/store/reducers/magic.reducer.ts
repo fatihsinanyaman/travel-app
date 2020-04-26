@@ -1,13 +1,16 @@
 import * as fromMagicActions from "../actions/magic.actions";
+import { Country } from "src/app/interfaces";
 
 export interface MagicState {
-	magicDays: [];
-	magicPrice: number;
+	price: number;
+	countries: Array<Country>;
+	days: [];
 }
 
 export const initialState: MagicState = {
-	magicDays: [],
-	magicPrice: 3400,
+	price: 3400,
+	countries: [],
+	days: [],
 };
 
 export function reducer(
@@ -18,13 +21,13 @@ export function reducer(
 		case fromMagicActions.SET_MAGIC_DAYS: {
 			return {
 				...state,
-				magicDays: action.payload,
+				days: action.payload,
 			};
 		}
 		case fromMagicActions.SET_MAGIC_PRICE: {
 			return {
 				...state,
-				magicPrice: action.payload,
+				price: action.payload,
 			};
 		}
 	}

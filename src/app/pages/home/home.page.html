@@ -6,15 +6,9 @@
 			accusantium doloremque laudantium, totam rem aperiam...
 		</h2>
 	</div>
-	<div class="m-countries">
-		<div>
-			EUROPE, ALBANIA, ARGENTINA...
-		</div>
-		<div class="more">
-			<span>6 MORE</span>
-			<ion-icon name="edit"></ion-icon>
-		</div>
-	</div>
+	<app-country-select-button
+		[countries]="countries"
+	></app-country-select-button>
 	<div class="m-content">
 		<span>I WANT</span>
 		<span>TO TRAVEL</span>
@@ -29,3 +23,11 @@
 		</div>
 	</div>
 </ion-content>
+
+<app-date-selector></app-date-selector>
+
+<ion-footer class="ion-no-border">
+	<ion-toolbar>
+		<ion-title>Footer</ion-title>
+	</ion-toolbar>
+</ion-footer>

@@ -1,0 +1,24 @@
+<div
+	class="m-countries"
+	[routerLink]="['/search-location']"
+	*ngIf="countries.length > 0; else countrySelect"
+>
+	<div>
+		EUROPE, ALBANIA, ARGENTINA...
+	</div>
+	<div class="more">
+		<span>6 MORE</span>
+		<ion-icon name="edit"></ion-icon>
+	</div>
+</div>
+
+<ng-template #countrySelect>
+	<div class="m-countries" [routerLink]="['/search-location']">
+		<div>
+			Select Countries...
+		</div>
+		<div class="more">
+			<ion-icon name="edit"></ion-icon>
+		</div>
+	</div>
+</ng-template>
